@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Analytics</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="analysis-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>
+          <span class="material-symbols-outlined">pie_chart</span>
+          Expense Analytics
+        </h1>
+        <button class="back-btn" id="backBtn">
+          <span class="material-symbols-outlined">arrow_back</span>
+          Back to Tracker
+        </button>
+      </div>
+
+      <div class="analytics-grid" id="analyticsContent">
+        <div class="chart-section">
+          <h2 class="section-title">
+            <span class="material-symbols-outlined">donut_large</span>
+            Expense Distribution
+          </h2>
+          <div class="chart-container">
+            <canvas id="pieChart"></canvas>
+            <div class="total-center">
+              <div class="total-label">Total Spent</div>
+              <div class="total-amount">
+                ₹<span id="totalAmount">0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="breakdown-section">
+          <h2 class="section-title">
+            <span class="material-symbols-outlined">format_list_bulleted</span>
+            Category Breakdown
+          </h2>
+          <div class="category-list" id="categoryList">
+            <!-- Categories will be populated here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid" id="statsGrid">
+        <!-- Stats will be populated here -->
+      </div>
+    </div>
+    <script src="analysis-script.js"></script>
+  </body>
+</html>

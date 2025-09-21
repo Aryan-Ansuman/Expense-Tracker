@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="style-index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <span class="material-symbols-outlined">calculate</span>
+        Expense Tracker
+      </h1>
+
+      <form id="expense-form">
+        <input
+          type="text"
+          id="expense-name"
+          placeholder="Expense name"
+          required
+        />
+        <input
+          type="number"
+          id="expense-amount"
+          placeholder="Amount (₹)"
+          step="0.01"
+          required
+        />
+        <div class="select-wrapper">
+          <div class="select-display" id="category-select-display">
+            <span id="category-selected-text">Select Category</span>
+            <span class="material-symbols-outlined select-arrow"
+              >expand_more</span
+            >
+          </div>
+          <div class="select-options" id="category-select-options">
+            <div class="select-option" data-value="">
+              <span>Select Category</span>
+            </div>
+            <div class="select-option" data-value="essentials">
+              <div class="category-tag essentials">
+                <span class="material-symbols-outlined">home</span>
+                Essentials
+              </div>
+            </div>
+            <div class="select-option" data-value="food">
+              <div class="category-tag food">
+                <span class="material-symbols-outlined">dinner_dining</span>
+                Food & Dining
+              </div>
+            </div>
+            <div class="select-option" data-value="lifestyle">
+              <div class="category-tag lifestyle">
+                <span class="material-symbols-outlined">attractions</span>
+                Lifestyle & Entertainment
+              </div>
+            </div>
+            <div class="select-option" data-value="health">
+              <div class="category-tag health">
+                <span class="material-symbols-outlined">exercise</span>
+                Health & Fitness
+              </div>
+            </div>
+            <div class="select-option" data-value="education">
+              <div class="category-tag education">
+                <span class="material-symbols-outlined">work</span>
+                Education & Work
+              </div>
+            </div>
+            <div class="select-option" data-value="financial">
+              <div class="category-tag financial">
+                <span class="material-symbols-outlined">attach_money</span>
+                Financial
+              </div>
+            </div>
+            <div class="select-option" data-value="travel">
+              <div class="category-tag travel">
+                <span class="material-symbols-outlined">beach_access</span>
+                Travel
+              </div>
+            </div>
+            <div class="select-option" data-value="others">
+              <div class="category-tag others">
+                <span class="material-symbols-outlined">alt_route</span>
+                Others
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit">
+          <span class="material-symbols-outlined">add_circle</span>
+          Add
+        </button>
+      </form>
+
+      <div class="controls">
+        <div class="controls-header">
+          <h2>
+            <span class="material-symbols-outlined">filter_list</span>
+            Expenses
+          </h2>
+          <button id="view-analysis-btn">
+            <span class="material-symbols-outlined">insights</span>
+            View Analysis
+          </button>
+        </div>
+        <div class="sorting-controls">
+          <div class="select-wrapper">
+            <div class="select-display" id="sort-select-display">
+              <span id="sort-selected-text">Latest First</span>
+              <span class="material-symbols-outlined select-arrow"
+                >expand_more</span
+              >
+            </div>
+            <div class="select-options" id="sort-select-options">
+              <div class="select-option selected" data-value="date-desc">
+                Latest First
+              </div>
+              <div class="select-option" data-value="date-asc">
+                Oldest First
+              </div>
+              <div class="select-option" data-value="amount-desc">
+                High to Low
+              </div>
+              <div class="select-option" data-value="amount-asc">
+                Low to High
+              </div>
+              <div class="select-option" data-value="category">By Category</div>
+            </div>
+          </div>
+
+          <div class="select-wrapper">
+            <div class="select-display" id="filter-select-display">
+              <span id="filter-selected-text">All Categories</span>
+              <span class="material-symbols-outlined select-arrow"
+                >expand_more</span
+              >
+            </div>
+            <div class="select-options" id="filter-select-options">
+              <div class="select-option selected" data-value="">
+                All Categories
+              </div>
+              <div class="select-option" data-value="essentials">
+                <div class="category-tag essentials">
+                  <span class="material-symbols-outlined">home</span>
+                  Essentials
+                </div>
+              </div>
+              <div class="select-option" data-value="food">
+                <div class="category-tag food">
+                  <span class="material-symbols-outlined">dinner_dining</span>
+                  Food & Dining
+                </div>
+              </div>
+              <div class="select-option" data-value="lifestyle">
+                <div class="category-tag lifestyle">
+                  <span class="material-symbols-outlined">attractions</span>
+                  Lifestyle & Entertainment
+                </div>
+              </div>
+              <div class="select-option" data-value="health">
+                <div class="category-tag health">
+                  <span class="material-symbols-outlined">exercise</span>
+                  Health & Fitness
+                </div>
+              </div>
+              <div class="select-option" data-value="education">
+                <div class="category-tag education">
+                  <span class="material-symbols-outlined">work</span>
+                  Education & Work
+                </div>
+              </div>
+              <div class="select-option" data-value="financial">
+                <div class="category-tag financial">
+                  <span class="material-symbols-outlined">attach_money</span>
+                  Financial
+                </div>
+              </div>
+              <div class="select-option" data-value="travel">
+                <div class="category-tag travel">
+                  <span class="material-symbols-outlined">beach_access</span>
+                  Travel
+                </div>
+              </div>
+              <div class="select-option" data-value="others">
+                <div class="category-tag others">
+                  <span class="material-symbols-outlined">alt_route</span>
+                  Others
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="range-group">
+            <label>Min Amount: <span id="min-value">₹0</span></label>
+            <input
+              type="range"
+              id="min-amount"
+              class="range-slider"
+              min="0"
+              max="10000"
+              value="0"
+              step="100"
+            />
+          </div>
+
+          <div class="range-group">
+            <label>Max Amount: <span id="max-value">₹10000+</span></label>
+            <input
+              type="range"
+              id="max-amount"
+              class="range-slider"
+              min="0"
+              max="10000"
+              value="10000"
+              step="100"
+            />
+          </div>
+        </div>
+      </div>
+
+      <ul id="expense-list"></ul>
+
+      <div id="total">
+        <h3>
+          <span class="material-symbols-outlined">account_balance_wallet</span>
+          Total: ₹<span id="total-amount">0.00</span>
+        </h3>
+      </div>
+    </div>
+    <script src="index-script.js"></script>
+  </body>
+</html>
